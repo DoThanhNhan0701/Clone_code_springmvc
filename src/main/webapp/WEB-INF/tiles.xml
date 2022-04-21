@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<!DOCTYPE tiles-definitions PUBLIC  
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">  
+<tiles-definitions>
+    <definition name ="baseLayout" template="/WEB-INF/layout/base.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/WEB-INF/layout/header.jsp" />
+        <put-attribute name="content" value="" />
+        <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
+    </definition>
+    
+    <definition name="index" extends="baseLayout">
+        <put-attribute name="title" value="Trang chủ"/>
+        <put-attribute name="content" value="/WEB-INF/VIEW/index.jsp"/>
+    </definition>
+
+    <definition name="baseAdmin" template="/WEB-INF/layout/baseAdmin.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/WEB-INF/layout/headerAdmin.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/layout/footerAdmin.jsp"/>
+        <put-attribute name="content" value=""/>
+    </definition>
+    <definition name="pageAdmin" extends="baseAdmin">
+
+    </definition>
+
+
+    <definition name="giohang" extends="baseLayout">
+        <put-attribute name="title" value="Giỏ hàng"/>
+        <put-attribute name="content" value="/WEB-INF/VIEW/giohang.jsp"/>
+    </definition>
+    <definition name="lienhe" extends="baseLayout">
+        <put-attribute name="title" value="Liên hệ"/>
+        <put-attribute name="content" value="/WEB-INF/VIEW/lienhe.jsp"/>
+    </definition>
+    <definition name="chitiet" extends="baseLayout">
+        <put-attribute name="title" value="Chi tiết"/>
+        <put-attribute name="content" value="/WEB-INF/VIEW/chitiet.jsp"/>
+
+    </definition>
+<!--    <definition name="login" extends="baseLayout">
+        <put-attribute name="title" value="Dang Nhap"/>
+        <put-attribute name="content" value="/WEB-INF/VIEW/login.jsp"/>
+    </definition>
+    <definition name="signup" extends="baseLayout">
+        <put-attribute name="title" value="Dang ki"/>
+        <put-attribute name="content" value="/WEB-INF/VIEW/signup.jsp"/>
+    </definition>-->
+</tiles-definitions>
