@@ -125,17 +125,15 @@
 
             </div>
             <c:url var="action" value="/" />
-            <form method="get" action="${action}">
-                <div class="header__search">
-                    <input type="text" name="kw" class="header__search--input" placeholder="Tìm kiếm sản phẩm tại đây">
-                    <div class="header__search--select">
-                        <span class="header__search--select-label">Trong shop</span>
-                        <i class="header__search--select-icon fa-solid fa-chevron-down"></i>
-                    </div>
-                    <button class="search__icon--btn">
-                        <i class="search__icon--btn-icon fa-solid fa-magnifying-glass"></i>
-                    </button>
+            <form method="get" action="${action}" class="header__search">
+                <input type="text" name="kw" class="header__search--input" placeholder="Tìm kiếm sản phẩm tại đây">
+                <div class="header__search--select">
+                    <span class="header__search--select-label">Trong shop</span>
+                    <i class="header__search--select-icon fa-solid fa-chevron-down"></i>
                 </div>
+                <button class="search__icon--btn">
+                    <i class="search__icon--btn-icon fa-solid fa-magnifying-glass"></i>
+                </button>
             </form>
             <div class="header__cart">
                 <a href="<c:url value="/cart"/>"><i class="header__cart--icon fa-solid fa-cart-shopping"></i><span class="badge badge-danger" id="cart-count">${cartCounter}</span></a>

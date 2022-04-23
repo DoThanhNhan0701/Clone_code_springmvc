@@ -71,7 +71,7 @@
                                     <p class="product-detail-priceOld">
                                         ${product.gia}</p>
                                     <p class="product-detail-priceSale">
-                                        215000₫</p>
+                                        ${product.giaKhuyenMai}</p>
                                     <p class="product-detail-percentSale">5% GIẢM
                                     </p>
                                 </div>
@@ -80,28 +80,7 @@
                                          class="product-detail-price-slogan-img">
                                     <div class="product-detail-price-slogan-text-text">
                                         <p class="product-detail-price-slogan-text">Gì cũng rẻ</p>
-                                        <p class="product-detail-price-slogan-ad">Giá tốt nhất so với các
-                                            sản phẩm cùng loại trên Shopee!
-                                            Giá tốt nhất so với các
-                                            sản phẩm cùng loại trên Shopee!
-                                            Giá tốt nhất so với các
-                                            sản phẩm cùng loại trên Shopee!
-                                            sản phẩm cùng loại trên Shopee!
-                                            Giá tốt nhất so với các
-                                            sản phẩm cùng loại trên Shopee!
-                                            Giá tốt nhất so với các
-                                            sản phẩm cùng loại trên Shopee!
-                                            sản phẩm cùng loại trên Shopee!
-                                            Giá tốt nhất so với các
-                                            sản phẩm cùng loại trên Shopee!
-                                            Giá tốt nhất so với các
-                                            sản phẩm cùng loại trên Shopee!
-                                            sản phẩm cùng loại trên Shopee!
-                                            Giá tốt nhất so với các
-                                            sản phẩm cùng loại trên Shopee!
-                                            Giá tốt nhất so với các
-                                            sản phẩm cùng loại trên Shopee!
-                                        </p>
+                                        <p class="product-detail-price-slogan-ad">${product.chiTiet}</p>
                                     </div>
                                 </div>
                             </div>

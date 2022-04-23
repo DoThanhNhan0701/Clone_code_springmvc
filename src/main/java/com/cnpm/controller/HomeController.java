@@ -11,6 +11,7 @@ import com.cnpm.pojos.MatHang;
 import com.cnpm.services.AccountService;
 import com.cnpm.services.GioHangServices;
 import com.cnpm.services.MatHangService;
+import com.cnpm.services.NhomSanPhamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -33,6 +34,8 @@ public class HomeController {
     private MatHangService matHangService;
     @Autowired
     private GioHangServices gioHangServices;
+    @Autowired
+    private NhomSanPhamService nhomSanPhamService;
 
     @ModelAttribute
     public void attribute(Model model){
@@ -46,6 +49,7 @@ public class HomeController {
         String kw=param.getOrDefault("kw","");
         model.addAttribute("acc", new Account());
         model.addAttribute("listHang", this.matHangService.getList(kw, page));
+        model.addAttribute("danhmuc", this.nhomSanPhamService.getNSP());
         return "index";
     }
 

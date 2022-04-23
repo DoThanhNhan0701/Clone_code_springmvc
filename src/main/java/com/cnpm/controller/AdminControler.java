@@ -37,31 +37,30 @@ public class AdminControler {
     @Autowired
     private LoaiSanPhamService loaiSanPhamService;
     
-    @GetMapping("/matHang/add")
+    @GetMapping("/themsanpham")
     public String addMatHang(Model model){
         model.addAttribute("mathang", new MatHang());
         List <LoaiSanPham> listLsp = this.loaiSanPhamService.getList();
         model.addAttribute("list", listLsp);
-        return "add";
+        return "themsanpham";
     }
     
     @PostMapping("/matHang/add")
     public String readdMatHang(@ModelAttribute(value="mathang") MatHang hang){
         hang.setLoaiSP(this.loaiSanPhamService.getOne(hang.getIdLoaiSanPham()));
-        hang.setGiaKhuyenMai(0);
         if(this.matHangService.add(hang)){
             return "redirect:/";
         }
         else{
-            return "add";
+            return "themsanpham";
         }
     }
     
-    @GetMapping("/nhomSanPham/add")
+    @GetMapping("/nhomsanpham")
     public String addNhomSanPham(Model model){
         model.addAttribute("nsp", new NhomSanPham());
 
-        return "addNhomSanPham";
+        return "nhomsanpham";
     }
     
     @RequestMapping(path= "/nhomSanPham/add", method = RequestMethod.POST, produces = "application/x-www-form-urlencoded;charset=utf-8")
@@ -76,12 +75,12 @@ public class AdminControler {
         }
     }
     
-    @GetMapping("/loaiSanPham/add")
+    @GetMapping("/loaisanpham")
     public String addLoaiSanPham(Model model){
         List<NhomSanPham> listNSP = this.nhomSanPhamService.getNSP();
         model.addAttribute("lsp", new LoaiSanPham());
         model.addAttribute("listNSP", listNSP);
-        return "addLoaiSanPham";
+        return "loaisanpham";
     }
     
     @PostMapping("/loaiSanPham/add")
@@ -105,6 +104,20 @@ public class AdminControler {
         model.addAttribute("list", this.matHangService.getList(count, page));
         return "pageAdmin";
     }
-
+    
+    @RequestMapping("/sanpham")
+    public String danhsachsanpham(Model model, @RequestParam(required = false) Map<String, String> param){
+        int page = Integer.parseInt(param.getOrDefault("page", "1"));
+        int count = Integer.parseInt(param.getOrDefault("count", "20"));
+        model.addAttribute("list", this.matHangService.getList(count, page));
+        return "sanpham";
+    }
+        @RequestMapping("/taikhoan")
+    public String danhsachtaikhoan(Model model, @RequestParam(required = false) Map<String, String> param){
+        int page = Integer.parseInt(param.getOrDefault("page", "1"));
+        int count = Integer.parseInt(param.getOrDefault("count", "20"));
+        model.addAttribute("taikhoan", this.matHangService.getList(count, page));
+        return "taikhoan";
+    }
 
 }

@@ -84,12 +84,12 @@
                         <li class="category__item category__item--active">
                             <a href="" class="category__item--link">Sản phẩm</a>
                         </li>
-                        <c:forEach begin="1" end="3">
+                         <c:forEach var="c" items="${danhmuc}">
                             <li class="category__item">
-                                <a href="" class="category__item--link">Giày - dép</a>
-                            </li>
-                            <li class="category__item">
-                                <a href="" class="category__item--link">Son môi</a>
+                                <c:url value="/" var="catPath">
+                                    <c:param name="danhmuc" value="${c.idNhomSP}"></c:param>
+                                </c:url>
+                                <a href="${catPath}" class="category__item--link">${c.tenNhomSP}</a>
                             </li>
                         </c:forEach>
                     </ul>
@@ -185,7 +185,7 @@
                         <a href="<c:url value="/"/>?page=2" class="pagination-item__link">2</a>
                     </li>
                     <li class="pagination-item">
-                        <a href="" class="pagination-item__link">3</a>
+                        <a href="<c:url value="/"/>?page=3" class="pagination-item__link">3</a>
                     </li>               
                     <li class="pagination-item">
                         <a href="" class="pagination-item__link">
