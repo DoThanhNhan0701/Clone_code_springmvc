@@ -57,8 +57,8 @@
                                                     <td class="center">${product.hang}</td>
                                                     <td>${product.soLuong}</td>
                                                     <td>${product.chiTiet}</td>
-                                                    <td><a href="create.html">Sửa</a></td>
-                                                    <td><a href="#">Xóa</a></td>
+                                                    <td><a href="<c:url value="/admin/product/updatesanpham/${product.idMatHang}"/>">update</a></td>
+                                                    <td><a href="<c:url value="/admin/product/delete/${product.idMatHang}"/>" onclick="return confirm('bạn có chắc chắn không? ');">delete</a></td>
                                                 </tr>
                                             </c:forEach>
                                         </tbody>

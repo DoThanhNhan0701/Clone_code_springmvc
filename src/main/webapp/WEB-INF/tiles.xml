@@ -54,7 +54,13 @@ and open the template in the editor.
         <put-attribute name="title" value="Thêm sản phẩm"/>
         <put-attribute name="content" value="/WEB-INF/VIEW/themsanpham.jsp"/>
     </definition>
-        <definition name="nhomsanpham" extends="baseAdmin">
+    
+    <definition name="updatesanpham" extends="baseAdmin">
+        <put-attribute name="title" value="Update sản phẩm"/>
+        <put-attribute name="content" value="/WEB-INF/VIEW/updatesanpham.jsp"/>
+    </definition>
+   
+    <definition name="nhomsanpham" extends="baseAdmin">
         <put-attribute name="title" value="Nhom sản phẩm"/>
         <put-attribute name="content" value="/WEB-INF/VIEW/nhomsanpham.jsp"/>
     </definition>

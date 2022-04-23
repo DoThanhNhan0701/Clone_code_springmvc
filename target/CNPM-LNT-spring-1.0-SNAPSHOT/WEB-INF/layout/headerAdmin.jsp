@@ -127,7 +127,7 @@
                     <a href="<c:url value="/admin/sanpham"/> "><i class="fa fa-table fa-fw"></i>Danh sách sản phẩm</a>
                 </li>
                 <li>
-                    <a href="<c:url value="/admin/accout"/> "><i class="fa fa-table fa-fw"></i>Tài khoản</a>
+                    <a href="<c:url value="/admin/account"/> "><i class="fa fa-table fa-fw"></i>Tài khoản</a>
                 </li>
                 <li>
                     <a href="<c:url value="/admin/taikhoan"/> "><i class="fa fa-edit fa-fw"></i>Danh sách tài khoản</a>

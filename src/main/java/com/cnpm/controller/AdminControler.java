@@ -62,7 +62,7 @@ public class AdminControler {
 
         return "nhomsanpham";
     }
-    
+
     @RequestMapping(path= "/nhomSanPham/add", method = RequestMethod.POST, produces = "application/x-www-form-urlencoded;charset=utf-8")
     public String readdNhomSanPham(@ModelAttribute(value="nsp")NhomSanPham nsp){
         System.err.println();
@@ -96,7 +96,7 @@ public class AdminControler {
             return "addLoaiSanPham";
         }
     }
-
+ 
     @RequestMapping("")
     public String admin(Model model, @RequestParam(required = false) Map<String, String> param){
         int page = Integer.parseInt(param.getOrDefault("page", "1"));

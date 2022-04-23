@@ -1,6 +1,6 @@
 
 <%-- 
-    Document   : themsanpham
+    Document   : updatesanpham
     Created on : Apr 22, 2022, 8:41:27 PM
     Author     : ACER
 --%>
@@ -12,18 +12,18 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Thêm sản phẩm</h1>
+                <h1 class="page-header">Update sản phẩm</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
         <div class="container mt-5">
             <div class="card">
                 <div class="card-body">
-                    <c:url var="action" value="/admin/matHang/add"/>
-                    <form:form action="${action}" method="post" modelAttribute="mathang" enctype="multipart/form-data" role="form" data-toggle="validator">
+                    <c:url var="action" value="/admin/product/updatesanpham/${product.idMatHang}"/>
+                    <form:form action="${action}" method="post" modelAttribute="product" enctype="multipart/form-data" role="form" data-toggle="validator">
                         <div class="form-group">
                             <label>Tên sản phẩm</label>
-                            <form:input path="tenMH" class="form-control" data-error="Bạn cần nhập đầy đủ thông tin." type="text" />
+                            <form:input path="tenMH" class="form-control" data-error="Bạn cần nhập đầy đủ thông tin." type="text"/>
                             <!-- Error -->
                             <div class="help-block with-errors"></div>
                         </div>
@@ -63,7 +63,11 @@
                             <form:textarea path="chiTiet" class="form-control" data-error="Please enter message."/>
                             <div class="help-block with-errors"></div>
                         </div>
-
+                        <div class="form-group">
+                            <label>Hình ảnh</label> <br>
+                            <img src="${product.hinhAnh}" class="rounded" alt="Cinque Terre" style="width: 300px; height: 250px;">
+                            <div class="help-block with-errors"></div>
+                        </div>
                         <div class="form-group">
                             <label>Hình ảnh</label> <br>
                             <form:input path="file" type ="file" value="Browse..."/>
