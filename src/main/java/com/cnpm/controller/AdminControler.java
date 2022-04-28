@@ -8,6 +8,7 @@ package com.cnpm.controller;
 import com.cnpm.pojos.LoaiSanPham;
 import com.cnpm.pojos.MatHang;
 import com.cnpm.pojos.NhomSanPham;
+import com.cnpm.services.AccountService;
 import com.cnpm.services.LoaiSanPhamService;
 import com.cnpm.services.MatHangService;
 import com.cnpm.services.NhomSanPhamService;
@@ -22,7 +23,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
+import com.cnpm.pojos.Account;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import javax.xml.bind.DatatypeConverter;
 /**
  *
  * @author ADMIN
@@ -36,7 +40,8 @@ public class AdminControler {
     private NhomSanPhamService nhomSanPhamService;
     @Autowired
     private LoaiSanPhamService loaiSanPhamService;
-    
+    @Autowired
+    private AccountService accountService;
     @GetMapping("/themsanpham")
     public String addMatHang(Model model){
         model.addAttribute("mathang", new MatHang());
@@ -59,7 +64,7 @@ public class AdminControler {
     @GetMapping("/nhomsanpham")
     public String addNhomSanPham(Model model){
         model.addAttribute("nsp", new NhomSanPham());
-
+        model.addAttribute("nhom", this.nhomSanPhamService.getNSP());
         return "nhomsanpham";
     }
 
@@ -68,7 +73,7 @@ public class AdminControler {
         System.err.println();
         System.err.println(nsp.getTenNhomSP());
         if(this.nhomSanPhamService.add(nsp)){
-            return "redirect:/";
+            return "redirect:/admin/nhomsanpham";
         }
         else{
             return "addNhomSanPham";
@@ -80,6 +85,7 @@ public class AdminControler {
         List<NhomSanPham> listNSP = this.nhomSanPhamService.getNSP();
         model.addAttribute("lsp", new LoaiSanPham());
         model.addAttribute("listNSP", listNSP);
+        model.addAttribute("loai", this.loaiSanPhamService.getList());
         return "loaisanpham";
     }
     
@@ -90,7 +96,7 @@ public class AdminControler {
         System.err.println();
         System.err.println("===================== Fix bug Fix BUG ========================="+lsp.getTenLoaiSP());
         if(this.loaiSanPhamService.add(lsp)){
-            return "redirect:/";
+            return "redirect:/admin/loaisanpham";
         }
         else{
             return "addLoaiSanPham";
@@ -112,12 +118,27 @@ public class AdminControler {
         model.addAttribute("list", this.matHangService.getList(count, page));
         return "sanpham";
     }
-        @RequestMapping("/taikhoan")
-    public String danhsachtaikhoan(Model model, @RequestParam(required = false) Map<String, String> param){
-        int page = Integer.parseInt(param.getOrDefault("page", "1"));
-        int count = Integer.parseInt(param.getOrDefault("count", "20"));
-        model.addAttribute("taikhoan", this.matHangService.getList(count, page));
+//    Phần tài khoản
+    @RequestMapping("/taikhoan")
+    public String danhsachtaikhoan(Model model, @RequestParam(required = false) Map<String, String> param) throws NoSuchAlgorithmException{
+        List<Account> list = this.accountService.getListAccount();
+        for(int i= 0; i < list.size(); i++){
+            String pass = list.get(i).getPass();
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            md.update(pass.getBytes());
+            byte[] digest = md.digest();
+            String passok = DatatypeConverter.printHexBinary(digest).toUpperCase();
+            list.get(i).setPass(passok);
+        }
+        model.addAttribute("account", list);
+        
         return "taikhoan";
     }
+    @GetMapping("/deleteAccount/{id}")
+    public String deleteAccount(@PathVariable int id) {
+        this.accountService.delete(id);
+        return "redirect:/admin/taikhoan";
+    }
+//    Kết thúc phần tài khoản
 
 }

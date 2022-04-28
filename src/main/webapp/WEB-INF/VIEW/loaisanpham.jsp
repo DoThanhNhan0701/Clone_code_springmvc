@@ -21,7 +21,7 @@
                     <c:url var="action" value="/admin/loaiSanPham/add"/>
                     <form:form action="${action}" modelAttribute="lsp" method="post" enctype="multipart/form-data" role="form" data-toggle="validator">
                         <div class="form-group">
-                            <label>Loai sản phẩm</label>
+                            <label>Loại sản phẩm</label>
                             <form:input path="tenLoaiSP" id = "name"  class="form-control" data-error="Bạn cần nhập đầy đủ thông tin." type="text"/>
                             <div class="help-block with-errors"></div>
                         </div>
@@ -38,6 +38,41 @@
                     </form:form>
                 </div>
             </div>
-
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">                   
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Tên loại sản phẩm</th>
+                                                <th>Tác vụ</th>
+                                            </tr>
+                                            </tr>
+                                        </thead>
+                                        <tbody>  
+                                            <c:forEach items="${loai}" var="l">
+                                                <tr class="odd gradeX">
+                                                    <td class="center">${l.idLoaiSP}</td>
+                                                    <td class="center">${l.tenLoaiSP}</td>
+                                                    <td><a href="<c:url value="/admin/product/deleteloai/${l.idLoaiSP}"/>" onclick="return confirm('bạn có chắc chắn không? ');">Xóa</a></td>
+                                                </tr>
+                                            </c:forEach>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <div id="morris-bar-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>

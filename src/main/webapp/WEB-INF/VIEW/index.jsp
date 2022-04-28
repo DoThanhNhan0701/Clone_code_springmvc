@@ -87,9 +87,9 @@
                          <c:forEach var="c" items="${danhmuc}">
                             <li class="category__item">
                                 <c:url value="/" var="catPath">
-                                    <c:param name="danhmuc" value="${c.idNhomSP}"></c:param>
+                                    <c:param name="danhmuc" value="${c.idLoaiSP}"></c:param>
                                 </c:url>
-                                <a href="${catPath}" class="category__item--link">${c.tenNhomSP}</a>
+                                <a href="${catPath}" class="category__item--link">${c.tenLoaiSP}</a>
                             </li>
                         </c:forEach>
                     </ul>

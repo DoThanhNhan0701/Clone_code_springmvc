@@ -46,6 +46,11 @@
 
             <tiles:insertAttribute name="footer"/>
         </div>
+        <script src="//cdn.ckeditor.com/4.18.0/standard/ckeditor.js"></script>
+        <script>
 
+            CKEDITOR.replace( 'editor1' );
+
+        </script>
     </body>
 </html>

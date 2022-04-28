@@ -115,22 +115,19 @@
                     <a href="<c:url value="/admin"/> " class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                 </li>
                 <li>
-                    <a href="<c:url value="/admin/nhomsanpham"/> "><i class="fa fa-table fa-fw"></i>Nhom sản phẩm</a>
+                    <a href="<c:url value="/admin/nhomsanpham"/> "><i class="fa fa-table fa-fw"></i>Nhóm sản phẩm</a>
                 </li>
                 <li>
-                    <a href="<c:url value="/admin/loaisanpham"/> "><i class="fa fa-table fa-fw"></i>Loai sản phẩm</a>
+                    <a href="<c:url value="/admin/loaisanpham"/> "><i class="fa fa-table fa-fw"></i>Loại sản phẩm</a>
                 </li>
                 <li>
-                    <a href="<c:url value="/admin/themsanpham"/> "><i class="fa fa-table fa-fw"></i>Thêm sản phẩm</a>
+                    <a href="<c:url value="/admin/themsanpham"/> "><i class="fa-solid fa-square-plus"></i></i>Thêm sản phẩm</a>
                 </li>
                 <li>
-                    <a href="<c:url value="/admin/sanpham"/> "><i class="fa fa-table fa-fw"></i>Danh sách sản phẩm</a>
+                    <a href="<c:url value="/admin/sanpham"/> "><i class="fa-brands fa-product-hunt"></i>Danh sách sản phẩm</a>
                 </li>
                 <li>
-                    <a href="<c:url value="/admin/account"/> "><i class="fa fa-table fa-fw"></i>Tài khoản</a>
-                </li>
-                <li>
-                    <a href="<c:url value="/admin/taikhoan"/> "><i class="fa fa-edit fa-fw"></i>Danh sách tài khoản</a>
+                    <a href="<c:url value="/admin/taikhoan"/> "><i class="fa-solid fa-square-plus"></i>Danh sách tài khoản</a>
                 </li>
             </ul>
         </div>

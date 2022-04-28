@@ -4,6 +4,7 @@ import com.cnpm.pojos.LoaiSanPham;
 import com.cnpm.pojos.MatHang;
 import com.cnpm.services.LoaiSanPhamService;
 import com.cnpm.services.MatHangService;
+import com.cnpm.services.NhomSanPhamService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,6 +21,8 @@ public class ProductAdminController {
     private MatHangService matHangService;
     @Autowired
     private LoaiSanPhamService loaiSanPhamService;
+    @Autowired
+    private NhomSanPhamService nhomSanPhamService;
 
     @RequestMapping("")
     public String product(Model model, @RequestParam(required = true) Map<String, String> param) {
@@ -54,6 +57,20 @@ public class ProductAdminController {
     public String deleteProduct(@PathVariable int id) {
         this.matHangService.delete(id);
         return "redirect:/admin/sanpham";
+    }
+    
+//    DELETE NHOM SAN PHAM
+    @GetMapping("/deletenhom/{id}")
+    public String deleteNhomsanpham(@PathVariable int id) {
+        this.nhomSanPhamService.delete(id);
+        return "redirect:/admin/nhomsanpham";
+    }
+    
+//    DELETE LOẠI SAN PHAM
+    @GetMapping("/deleteloai/{id}")
+    public String deleteLoaisanpham(@PathVariable int id){
+        this.loaiSanPhamService.delete(id);
+        return"redirect:/admin/loaisanpham";
     }
 
 }

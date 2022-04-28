@@ -30,52 +30,23 @@
                             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
-                                        <th>Tên</th>
+                                        <th>ID</th>
                                         <th>Tên tài khoản</th>
+                                        <th>Passwords</th>
                                         <th>Email</th>
-                                        <th>Địa chỉ</th>
-                                        <th>Số điện thoại</th>
-                                        <th colspan="2"><a href="create.html">Thêm</a></th>
+                                        <th colspan="2">Tác vụ</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="odd gradeX">
-                                        <td>Luân</td>
-                                        <td>NVDLuan2001</td>
-                                        <td>NVDLuan2001@gmail.com</td>
-                                        <td class="center">Thăng bình - Quảng nam</td>
-                                        <td class="center">0966324874</td>
-                                        <td><a href="#">Sửa</a></td>
-                                        <td><a href="#">Xóa</a></td>
-                                    </tr>
-                                    <tr class="even gradeC">
-                                        <td>Tân</td>
-                                        <td>Tan2001</td>
-                                        <td>Tan2001@gmail.com</td>
-                                        <td class="center">Đại lộc - Quảng nam</td>
-                                        <td class="center">0967513304</td>
-                                        <td><a href="#">Sửa</a></td>
-                                        <td><a href="#">Xóa</a></td>
-                                    </tr>
-                                    <tr class="even gradeC">
-                                        <td>Nhân</td>
-                                        <td>Nhan2001</td>
-                                        <td>Nhan2001@gmail.com</td>
-                                        <td class="center">Đak lak</td>
-                                        <td class="center">097542103</td>
-                                        <td><a href="#">Sửa</a></td>
-                                        <td><a href="#">Xóa</a></td>
-                                    </tr>
-                                    <tr class="even gradeC">
-                                        <td>Lâm</td>
-                                        <td>Lam2001</td>
-                                        <td>Lam2001@gmail.com</td>
-                                        <td class="center">Núi thành - Quảng nam</td>
-                                        <td class="center">09751233412</td>
-                                        <td><a href="#">Sửa</a></td>
-                                        <td><a href="#">Xóa</a></td>
-                                    </tr>
-                                    </tr>
+                                    <c:forEach var="account" items="${account}">
+                                        <tr class="odd gradeX">
+                                            <td>${account.id}</td>
+                                            <td>${account.user}</td>
+                                            <td>${account.pass}</td>
+                                            <td class="center">${account.email}</td>
+                                            <td><a href="<c:url value="/admin/deleteAccount/${account.id}"/>" onclick="return confirm('bạn có chắc chắn không? ');">delete</a></td>
+                                        </tr>
+                                    </c:forEach>
                                 </tbody>
                             </table>
                         </div>

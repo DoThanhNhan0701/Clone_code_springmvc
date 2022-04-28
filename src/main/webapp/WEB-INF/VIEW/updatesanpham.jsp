@@ -60,7 +60,7 @@
                         </div>
                         <div class="form-group">
                             <label>Thông tin chi tiết</label>
-                            <form:textarea path="chiTiet" class="form-control" data-error="Please enter message."/>
+                            <form:textarea path="chiTiet" class="form-control" id="editor1" data-error="Please enter message."/>
                             <div class="help-block with-errors"></div>
                         </div>
                         <div class="form-group">
