@@ -7,6 +7,7 @@ package com.cnpm.controller;
 
 import com.cnpm.javaUtils.PersonUsing;
 import com.cnpm.pojos.Account;
+import com.cnpm.pojos.LoaiSanPham;
 import com.cnpm.pojos.MatHang;
 import com.cnpm.pojos.NhomSanPham;
 import com.cnpm.services.AccountService;
@@ -38,6 +39,7 @@ public class HomeController {
     private GioHangServices gioHangServices;
     @Autowired
     private LoaiSanPhamService loaiSanPhamService;
+    private Object matHangCollection;
 
     @ModelAttribute
     public void attribute(Model model) {
@@ -46,19 +48,20 @@ public class HomeController {
         }
     }
 
-//    @RequestMapping("/")
-//    public String loaisanpham(Model model) {
-//
-//        return "index";
-//    }
-
     @RequestMapping("/")
     public String index(Model model, @RequestParam(required = false) Map<String, String> param) {
         int page = Integer.parseInt(param.getOrDefault("page", "1"));
         String kw = param.getOrDefault("kw", "");
-        model.addAttribute("acc", new Account());
-        model.addAttribute("listHang", this.matHangService.getList(kw, page));
+        String danhmuc = param.get("danhmuc");
         model.addAttribute("danhmuc", this.loaiSanPhamService.getList());
+        if (danhmuc == null) {
+            model.addAttribute("listHang", this.matHangService.getList(kw, page));
+            model.addAttribute("acc", new Account());
+        }
+        else{
+            LoaiSanPham loai = this.loaiSanPhamService.getOne(Integer.parseInt(danhmuc));
+            model.addAttribute("listHang", loai.mathangCollection);
+        }
         return "index";
     }
 
@@ -76,8 +79,6 @@ public class HomeController {
 
     @RequestMapping("/Thanhtoan")
     public String Thanhtoan(Model model) {
-//        MatHang matHang = this.matHangService.getOne(id);
-//        model.addAttribute("product", matHang);
         return "Thanhtoan";
     }
 

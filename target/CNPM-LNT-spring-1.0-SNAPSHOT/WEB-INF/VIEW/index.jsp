@@ -64,7 +64,7 @@
                     <span class="dot" onclick="currentSlide(5)"></span>
                     <span class="dot" onclick="currentSlide(6)"></span>
                     <span class="dot" onclick="currentSlide(7)"></span>
-                    <span class="dot" onclick="currentSlide(😎"></span>
+                    <span class="dot" onclick="currentSlide(8)"></span>
                 </div>
             </div>
             <div class="grid__column-2-16-slider">
@@ -138,8 +138,8 @@
                                         <img src="${product.hinhAnh}" alt="" class="home__product--items-images">
                                         <h4 class="home__product--items-name">${product.tenMH}</h4>
                                         <div class="home__product--items-price">
-                                            <span class="home__product--items-price-old">${product.gia}</span>
-                                            <span class="home__product--items-price-new">${product.giaKhuyenMai}</span>
+                                            <span class="home__product--items-price-old">${product.gia}đ</span>
+                                            <span class="home__product--items-price-new">${product.giaKhuyenMai}đ</span>
                                         </div>
                                         <div class="home__product--items-action">
                                             <div class="home__product--items-like">   <!--Xử lí lại-->

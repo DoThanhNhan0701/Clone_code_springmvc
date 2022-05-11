@@ -34,6 +34,7 @@
                                         <th>Tên tài khoản</th>
                                         <th>Passwords</th>
                                         <th>Email</th>
+                                        <th>Quyền</th>
                                         <th colspan="2">Tác vụ</th>
                                     </tr>
                                 </thead>
@@ -44,6 +45,7 @@
                                             <td>${account.user}</td>
                                             <td>${account.pass}</td>
                                             <td class="center">${account.email}</td>
+                                            <td>${account.userRole}</td>
                                             <td><a href="<c:url value="/admin/deleteAccount/${account.id}"/>" onclick="return confirm('bạn có chắc chắn không? ');">delete</a></td>
                                         </tr>
                                     </c:forEach>

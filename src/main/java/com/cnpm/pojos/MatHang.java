@@ -11,6 +11,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
+
 /**
  *
  * @author ADMIN
@@ -46,6 +47,9 @@ public class MatHang implements Serializable {
     private int idLoaiSanPham;
     @OneToMany(mappedBy = "matHang")
     private List<Images> listImg;
+    
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "iDMatHang")
+//    private Collection<Comment> commentCollection;
 
     public MatHang(String tenMH, String hang, String hinhAnh, int gia, int giaKhuyenMai, int soLuong, String chiTiet, LoaiSanPham loaiSP, int idBanHang) {
         this.tenMH = tenMH;
@@ -71,6 +75,14 @@ public class MatHang implements Serializable {
         this.loaiSP = loaiSP;
 
     }
+//    @XmlTransient
+//    public Collection<Comment> getCommentCollection() {
+//        return commentCollection;
+//    }
+//
+//    public void setCommentCollection(Collection<Comment> commentCollection) {
+//        this.commentCollection = commentCollection;
+//    }
 
     public MultipartFile getFile() {
         return file;

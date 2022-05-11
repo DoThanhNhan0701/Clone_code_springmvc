@@ -57,6 +57,10 @@
                 </div>
                 <!-- Phần sản phẩm -->
                 <div class="home__product">
+                    <div class="container__title">
+                        <h1 class="container__giohang--title"><a href="../index.html" class="home__home">TRANG
+                            CHỦ /</a> Chi tiết</h1>
+                    </div>
                     <div class="grid__row product-detail">
                         <img src="${product.hinhAnh}" alt="" class="product-detail-img">
                         <div class="product-detail-infor">
@@ -90,6 +94,99 @@
                                     Mua ngay
                                 </button>
                             </a>
+                        </div>
+                    </div>
+                    <div class="product__comment--detail">
+                        <div class="product__comment">
+                            <span class="comment__user--comment">Đánh giá sản phẩm</span>
+                            <div class="product__comment--user">
+                                <form action="">
+                                    <input type="text" placeholder="Gửi bình luận của bạn..."
+                                           class="product__comment--input">
+                                    <br>
+                                    <button class="product-comment--button">
+                                        <i class="fa-brands fa-buy-n-large product-detail-btn-icon"></i>
+                                        Gửi bình luận
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="comment__user">
+                            <div class="comment__user--maggin">
+                                <img src="images/ao1.jpg" alt="" class="comment__user--img">
+                                <br>
+                                <div class="comment__user--div">
+                                    <span class="comment__user--name">TNhan.ITTechnology@gmail.com</span>
+                                    <div class="home__product--items-rating">
+                                        <i class="home__product--items-star-yelown fa-solid fa-star"></i>
+                                        <i class="home__product--items-star-yelown fa-solid fa-star"></i>
+                                        <i class="home__product--items-star-yelown fa-solid fa-star"></i>
+                                        <i class="home__product--items-star-yelown fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <span class="comment__user--phanloai">Hàng kém chất lượng</span>
+                                    <br>
+                                    <span class="comment__user--time">18/04/2022</span>
+                                    <br>
+                                    <span class="comment__user--huuich"><i class="fa-solid fa-thumbs-up mau"></i>
+                                                Hữu
+                                                ích</span>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="comment__user--duongke"></div>
+                        </div>
+                        <div class="comment__user">
+                            <div class="comment__user--maggin">
+                                <img src="images/ao1.jpg" alt="" class="comment__user--img">
+                                <br>
+                                <div class="comment__user--div">
+                                    <span class="comment__user--name">TNhan.ITTechnology@gmail.com</span>
+                                    <div class="home__product--items-rating">
+                                        <i class="home__product--items-star-yelown fa-solid fa-star"></i>
+                                        <i class="home__product--items-star-yelown fa-solid fa-star"></i>
+                                        <i class="home__product--items-star-yelown fa-solid fa-star"></i>
+                                        <i class="home__product--items-star-yelown fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <span class="comment__user--phanloai">Hàng kém chất lượng</span>
+                                    <br>
+                                    <span class="comment__user--time">Bình luận ngày 18/04/2022</span>
+                                    <br>
+                                    <span class="comment__user--huuich"><i
+                                            class="fa-solid fa-thumbs-up mau"></i>
+                                                Hữu
+                                                ích</span>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="comment__user--duongke"></div>
+                        </div>
+                        <div class="comment__user">
+                            <div class="comment__user--maggin">
+                                <img src="images/ao1.jpg" alt="" class="comment__user--img">
+                                <br>
+                                <div class="comment__user--div">
+                                    <span class="comment__user--name">TNhan.ITTechnology@gmail.com</span>
+                                    <div class="home__product--items-rating">
+                                        <i class="home__product--items-star-yelown fa-solid fa-star"></i>
+                                        <i class="home__product--items-star-yelown fa-solid fa-star"></i>
+                                        <i class="home__product--items-star-yelown fa-solid fa-star"></i>
+                                        <i class="home__product--items-star-yelown fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <span class="comment__user--phanloai">Hàng kém chất lượng</span>
+                                    <br>
+                                    <span class="comment__user--time">18/04/2022</span>
+                                    <br>
+                                    <span class="comment__user--huuich"><i
+                                            class="fa-solid fa-thumbs-up mau"></i>
+                                                Hữu
+                                                ích</span>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="comment__user--duongke"></div>
                         </div>
                     </div>
                 </div>
