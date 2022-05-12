@@ -77,17 +77,21 @@ public class HomeController {
         return "lienhe";
     }
 
-    @RequestMapping("/Thanhtoan")
-    public String Thanhtoan(Model model) {
-        return "Thanhtoan";
-    }
 
     @RequestMapping("/chitiet/{id}")
     public String chitiet(Model model, @PathVariable(value = "id") Integer id) {
         MatHang matHang = this.matHangService.getOne(id);
         model.addAttribute("product", matHang);
+        model.addAttribute("danhmuc", this.loaiSanPhamService.getList());
         return "chitiet";
     }
+    @RequestMapping("/Thanhtoan/{id}")
+    public String Thanhtoan(Model model, @PathVariable(value = "id") Integer id) {
+        MatHang matHang = this.matHangService.getOne(id);
+        model.addAttribute("product", matHang);
+        return "Thanhtoan";
+    }
+
 
     @GetMapping("/user")
     public ResponseEntity<String> user() {

@@ -2233,7 +2233,9 @@ img#ProductImg{
     float: left;
 }
 .comment__user--huuich{
-    margin-bottom: 20px;
+}
+p.comment__user--time{
+    margin-bottom: -5px;
 }
 .comment__user--div{
     float: left;

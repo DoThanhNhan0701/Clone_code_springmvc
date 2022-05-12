@@ -9,7 +9,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.List;
+import javax.xml.bind.annotation.XmlTransient;
 
 
 /**
@@ -48,8 +50,8 @@ public class MatHang implements Serializable {
     @OneToMany(mappedBy = "matHang")
     private List<Images> listImg;
     
-//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "iDMatHang")
-//    private Collection<Comment> commentCollection;
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER, mappedBy = "iDMatHang")
+    private Collection<Comment> commentCollection;
 
     public MatHang(String tenMH, String hang, String hinhAnh, int gia, int giaKhuyenMai, int soLuong, String chiTiet, LoaiSanPham loaiSP, int idBanHang) {
         this.tenMH = tenMH;
@@ -75,14 +77,14 @@ public class MatHang implements Serializable {
         this.loaiSP = loaiSP;
 
     }
-//    @XmlTransient
-//    public Collection<Comment> getCommentCollection() {
-//        return commentCollection;
-//    }
-//
-//    public void setCommentCollection(Collection<Comment> commentCollection) {
-//        this.commentCollection = commentCollection;
-//    }
+    @XmlTransient
+    public Collection<Comment> getCommentCollection() {
+        return commentCollection;
+    }
+
+    public void setCommentCollection(Collection<Comment> commentCollection) {
+        this.commentCollection = commentCollection;
+    }
 
     public MultipartFile getFile() {
         return file;
